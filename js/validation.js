@@ -8,15 +8,21 @@ function Validation(){
             return true;
         }
     }
-    this.checkduplicate = function(input, spanId, mess, arr){
+    this.checkDuplicate = function(input, spanId, mess, arr){
+        var status = true;
         for(var i = 0; i < arr.length; i++){
             if(input === arr[i].taskName){
-                getEle(spanId).innerHTML = mess;
-                return false;
-            }else{
-                getEle(spanId).innerHTML = "";
-                return true;
+                status = false;
+                break;
             }
+        }
+        if(status){
+            getEle(spanId).innerHTML = "";
+            return true;
+            
+        }else{
+            getEle(spanId).innerHTML = mess;
+            return false;
         }
     }
 }

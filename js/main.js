@@ -14,7 +14,8 @@ function layTongTinTask() {
 
     var isValid = true;
 
-    isValid = valid.checkNull(taskName, "spanAlert", "(*) Phải Nhập TaskName") && valid.checkduplicate(taskName, "spanAlert", "(*) TaskName bị trùng", taskList.arr)
+    isValid = valid.checkNull(taskName, "spanAlert", "(*) Phải Nhập TaskName") && valid.checkDuplicate(taskName, "spanAlert", "(*) TaskName bị trùng", taskList.arr);
+    
 
     if(isValid){
         var task = new ToDo(id, taskName, status);
